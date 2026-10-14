@@ -1,0 +1,86 @@
+<header class="sticky top-0 z-50 border-b border-indigo-300/15 bg-[#050a2d]/90 backdrop-blur-xl">
+    <nav class="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 lg:px-8">
+        <!-- Logo -->
+        <a href="#home" (click)="navigateTo('home')" class="flex min-w-0 shrink-0 items-center gap-3 no-underline" aria-label="Juvo home">
+            <img src="/icon/128x128.png" alt="Juvo" class="h-9 w-9 rounded-xl object-contain" />
+
+            <div class="flex flex-col leading-none">
+                <span class="text-lg font-bold tracking-[-0.03em] text-white">
+                    JUVO
+                </span>
+
+                <span class="mt-1 text-[9px] font-medium uppercase tracking-[0.12em] text-indigo-200/70">
+                    The Digital Product
+                </span>
+            </div>
+        </a>
+
+
+        <!-- Navigation -->
+        <ul class="desktop-navigation items-center gap-3">
+
+            <li>
+                <a href="#home" (click)="navigateTo('home')" [class.active]="active === 'home'"
+                    class="nav-link text-slate-300 transition-colors hover:text-white">
+                    Hero
+                </a>
+            </li>
+
+            <li>
+                <a href="#work" (click)="navigateTo('work')" [class.active]="active === 'work'"
+                    class="nav-link text-slate-300 transition-colors hover:text-white">
+                    Work
+                </a>
+            </li>
+
+            <li>
+                <a href="#lab" (click)="navigateTo('lab')" [class.active]="active === 'lab'"
+                    class="nav-link text-slate-300 transition-colors hover:text-white">
+                    Lab
+                </a>
+            </li>
+
+            <li>
+                <a href="#about" (click)="navigateTo('about')" [class.active]="active === 'about'"
+                    class="nav-link text-slate-300 transition-colors hover:text-white">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact" (click)="navigateTo('contact')" [class.active]="active === 'contact'"
+                    class="nav-link text-slate-300 transition-colors hover:text-white">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- CTA -->
+        <a href="#contact" (click)="navigateTo('contact')"
+            class="group hidden items-center gap-2 rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-3.5 py-2 text-sm font-semibold text-white shadow-lg shadow-blue-950/40 transition-all duration-300 hover:-translate-y-0.5 hover:from-violet-400 hover:to-blue-400 hover:shadow-blue-500/20 md:inline-flex">
+            Let's Talk
+
+            <span class="text-base transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+            </span>
+        </a>
+
+        <button type="button" class="mobile-menu-toggle h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white" (click)="menuOpen = !menuOpen" [attr.aria-expanded]="menuOpen" aria-controls="mobile-navigation" [attr.aria-label]="menuOpen ? 'Close navigation menu' : 'Open navigation menu'">
+            @if (menuOpen) {
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18" stroke-linecap="round" /></svg>
+            } @else {
+              <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" /></svg>
+            }
+        </button>
+
+    </nav>
+    <nav id="mobile-navigation" class="mobile-navigation border-t border-white/10 px-4 py-3" [hidden]="!menuOpen" aria-label="Mobile navigation">
+      <a href="#home" (click)="navigateTo('home')" class="mobile-nav-link" [class.active]="active === 'home'">Hero</a>
+      <a href="#work" (click)="navigateTo('work')" class="mobile-nav-link" [class.active]="active === 'work'">Work</a>
+      <a href="#lab" (click)="navigateTo('lab')" class="mobile-nav-link" [class.active]="active === 'lab'">Lab</a>
+      <a href="#about" (click)="navigateTo('about')" class="mobile-nav-link" [class.active]="active === 'about'">About</a>
+      <a href="#contact" (click)="navigateTo('contact')" class="mobile-nav-link" [class.active]="active === 'contact'">Contact</a>
+    </nav>
+</header>

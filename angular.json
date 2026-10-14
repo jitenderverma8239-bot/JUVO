@@ -6,9 +6,29 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "giftM": {
+    "juvo": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true,
+          "style": "none"
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -56,10 +76,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "giftM:build:production"
+              "buildTarget": "juvo:build:production"
             },
             "development": {
-              "buildTarget": "giftM:build:development"
+              "buildTarget": "juvo:build:development"
             }
           },
           "defaultConfiguration": "development"
