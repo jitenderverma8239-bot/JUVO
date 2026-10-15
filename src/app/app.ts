@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Navbar } from './shared/components/navbar/navbar';
 import { Footer } from './shared/components/footer/footer';
 import { Hero } from './pages/hero/hero';
@@ -13,5 +13,14 @@ import { About } from './pages/about/about';
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App implements OnInit {
+  ngOnInit(): void {
+    const splash = document.getElementById('juvo-splash');
+    if (!splash) return;
+
+    window.setTimeout(() => {
+      splash.classList.add('is-leaving');
+      window.setTimeout(() => splash.remove(), 280);
+    }, 500);
+  }
 }

@@ -3,24 +3,64 @@
 
 <head>
   <meta charset="utf-8">
-  <title>JUVO Digital products </title>
+  <title>JUVO | Digital Product Studio</title>
   <base href="/">
 
   <!--Meta Tags-->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="JUVO - A gift management application">
-  <meta name="keywords" content="gift, management, application, gifts, organization">
-  <meta name="author" content="JUVO Team">
-  <meta name="theme-color" content="#1976d2">
-  <meta name="description" content="JUVO is a gift management application that helps users organize and manage their gifts efficiently.">
+  <meta name="description" content="JUVO is an independent digital product studio shaping thoughtful digital experiences.">
+  <meta name="author" content="Jitender Verma">
+  <meta name="theme-color" content="#f7f9ff">
 
   <!--links-->
   <link rel="icon" type="image/x-icon" href="favicon.ico.ico">
-  
+
+  <style>
+    #juvo-splash {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      background: #f7f9ff;
+      opacity: 1;
+      transition: opacity 260ms ease, visibility 260ms ease;
+    }
+    #juvo-splash.is-leaving { opacity: 0; visibility: hidden; }
+    .juvo-splash-content { display: flex; flex-direction: column; align-items: center; padding: 24px; }
+    .juvo-splash-logo {
+      display: grid;
+      width: 104px;
+      height: 104px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid #e3e9f7;
+      border-radius: 26px;
+      background: linear-gradient(145deg, #fff, #edf3ff);
+      box-shadow: 0 18px 55px rgb(61 105 203 / 18%);
+    }
+    .juvo-splash-logo img { display: block; width: 76px; height: 76px; object-fit: contain; }
+    .juvo-splash-name { margin: 24px 0 0; color: #091235; font: 700 30px/1.1 Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .16em; }
+    .juvo-splash-caption { margin: 9px 0 0; color: #74809c; font: 600 10px/1.4 Inter, ui-sans-serif, system-ui, sans-serif; letter-spacing: .19em; text-transform: uppercase; }
+    .juvo-splash-spinner { width: 28px; height: 28px; margin-top: 36px; border: 3px solid #dce7fb; border-top-color: #3985f5; border-radius: 50%; animation: juvo-spin .85s linear infinite; }
+    @keyframes juvo-spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      #juvo-splash { transition: none; }
+      .juvo-splash-spinner { animation-duration: 2.5s; }
+    }
+  </style>
 
 </head>
 
 <body>
+  <div id="juvo-splash" role="status" aria-label="Loading JUVO">
+    <div class="juvo-splash-content">
+      <div class="juvo-splash-logo"><img src="icon/128x128.png" width="76" height="76" alt="JUVO logo"></div>
+      <p class="juvo-splash-name">JUVO</p>
+      <p class="juvo-splash-caption">Digital Product Studio</p>
+      <span class="juvo-splash-spinner" aria-hidden="true"></span>
+    </div>
+  </div>
   <app-root></app-root>
 </body>
 
